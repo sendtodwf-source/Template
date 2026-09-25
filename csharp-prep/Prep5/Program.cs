@@ -17,10 +17,12 @@ class Program
         Console.Write("Please enter your favorite number: ");
         number = Console.ReadLine();
     }
-        static void PromptUserBirthYear(out string birthYear)
+        static string PromptUserBirthYear()
     {
+        string birthYear;
         Console.Write("Please enter the year you were born: ");
         birthYear = Console.ReadLine();
+        return birthYear;
     }
         static void SquareNumber(string name, ref int sqNum)
     {
@@ -51,7 +53,7 @@ class Program
         PromptUserNumber(out number);
         //string to int conversion
         sqNumPass = int.Parse(number);
-        PromptUserBirthYear(out birthYear);
+        birthYear = PromptUserBirthYear();
         //string to int conversion
         byPass = int.Parse(birthYear);
         //squaring user's favorite number and displaying info
