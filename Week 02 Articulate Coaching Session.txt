@@ -1,0 +1,64 @@
+Week 02 Articulate Coaching Session Transcript
+Coach: Welcome! Just to be clear from the start, this is a coaching session, not a test. It is perfectly okay, and even encouraged, to say "I don't know" or "I made a mistake." That's the fastest way we'll learn today.
+I'm your supportive, non-judgmental Learning Coach and Software Mentor for this Week 02 Articulate Coaching Session. We'll talk through version control, git, and GitHub together in a safe space where mistakes are welcomed as part of learning. I'll also keep a full transcript of our entire conversation so you can copy it at the end if you need to submit it as part of your assignment.
+To get us started, what's your name?
+D the Student: Call me "D the Student"
+Coach: Great to meet you, D the Student. This is a safe learning space, so feel free to share whatever comes to mind—no pressure at all.
+To begin our discussion on version control: in your own words, what do you think version control is, and why might it be useful when working on a project?
+D the Student: Form what I understand... In this context version control refers to the way a git repository tracks folders and files to make sure that there is a breadcrumb trail on what has been edited in the folders and files. Sometimes in big projects big ideas get set aside for what more current matters. This is why git repositories are so useful!
+Coach: That’s a solid start, D the Student—you’ve got the core idea that version control keeps a history (that “breadcrumb trail”) of changes to your files and folders.
+One of the biggest reasons this history matters is that it lets you go back in time to a previous working version if something breaks later. Can you think of a time (or imagine a situation) where being able to return to an earlier, working copy of your project would be really helpful?
+D the Student: Yes, when I was helping my dad design our vacation home in fusion 360 there sometimes were projects that got put aside. And sometimes I needed to recreate the same 3D elements all over again. It would have been nice if I had a git repository
+Coach: That’s a perfect real-world example, D the Student—having a version history would have saved you from recreating those 3D elements from scratch.
+Version control is also especially powerful for teamwork. How do you think being able to track changes and share a project history might make it easier for multiple people to work on the same code or files without stepping on each other’s toes?
+D the Student: I would be able to branch out and we can compare our ideas at face value rather than a theoretical comparison. It makes teamwork more productive
+Coach: Exactly—branching and being able to compare real changes side-by-side makes collaboration much more practical and productive. You’re picking up the teamwork benefits of version control really well.
+Let’s shift to the main tool we use for this: git. In simple terms, what do you already know (or what have you heard) about what git is and how it helps with version control?
+D the Student: I know it can be used in the command prompt, however I want to better understand the terms and mechanics of how it works
+Coach: That’s a great place to start—focusing on the terms and how the pieces fit together.
+The first key idea is a repository (often just called a “repo”). A repo is basically the project folder that git is watching and tracking for changes. Have you created or looked inside a git repository yet, or would you like me to walk through what one looks like at a basic level?
+D the Student: Yes, I have two. But sometimes I need to google the command terms to make sure I am doing it right. Like today I made one repository but then created another one that was on a parent folder. This gave me some issues. I want to better understand the implications and be able to use git with fluency
+Coach: That’s a common hiccup—creating a repo inside another repo (or in a parent folder) can confuse git because it doesn’t know which one is the “main” project it’s supposed to track. The clean approach is usually one repo per project, at the top level of that project’s folder.
+The next useful command after you have a repo is git status. What do you think git status is telling you when you run it, or what have you noticed it shows?
+D the Student: It shows the most recent updates?
+Coach: Close! git status actually shows the current state of your working files right now—what’s been changed, what’s new (untracked), what’s ready to be saved, and so on. It doesn’t just list the most recent updates; it gives you a snapshot of where everything stands at that moment.
+Once you see changes with git status, the next step is usually to stage them with git add (or “stage” them). What do you think the purpose of staging/adding files is before you save a version?
+D the Student: not sure, but I know that it is essential
+Coach: No problem at all—that’s exactly why we’re here.
+Staging (with git add) is like choosing which changes you want to include in the next “save point.” You can add specific files or everything, so only the pieces you’re ready to record get included. It gives you control instead of automatically saving every single change.
+After you stage the files you want, the next step is to create a permanent record of those changes. Do you know what the git commit command does?
+D the Student: It is like saying "I'm ready to send this! be on the look out for an incoming change!"
+Coach: That’s a fun way to think about it! The spirit is close, but git commit is more like creating a permanent “snapshot” or save point of the staged changes right on your own computer, along with a short message describing what you changed. It doesn’t send anything anywhere yet—it just records the version locally so you (and git) can go back to it later.
+The command that actually sends your committed changes to a remote place like GitHub is git push. Have you used git push before, and if so, what do you understand it does?
+D the Student: yes it sends the file
+Coach: Yes—exactly. git push takes the commits you’ve made on your computer and sends (uploads) them to a remote location, most commonly GitHub.
+GitHub is important for two big reasons:
+
+It acts as a physical backup of your project that lives off your device (so if your computer crashes or gets lost, your work is still safe online).
+It makes sharing and collaborating with others straightforward.
+
+Because of this, it’s a really good habit to commit (and ideally push) every working version of your system as you go—so you always have clean restore points.
+Here’s a concrete everyday example of version control in action:
+
+Imagine you’re writing a school paper. You finish a solid draft on Monday and commit it (“Draft 1 – introduction and first two sections complete”). On Tuesday you try a new structure, but it falls apart. Instead of losing everything, you can simply return to Monday’s committed version and start again from a known-good point.
+Does that example make sense to you?
+D the Student: So what is the difference between pushing and commiting?
+Coach: Great clarifying question, D the Student.
+Commit creates a permanent snapshot of your staged changes on your own computer. It’s a local save point with a message. Nothing leaves your machine.
+Push takes those commits you’ve already made and uploads them to the remote (usually GitHub). That’s when the backup and sharing happen.
+So: commit = save locally → push = send the saved versions online.
+Does that difference feel clear now?
+D the Student: Why not just use ctrl+s
+Coach: That’s an excellent question—lots of people wonder the same thing at first.
+Ctrl+S (or the regular “Save” button) only updates the current version of the file on your computer. It overwrites the previous content, so you lose the earlier versions. There’s no history, no way to go back to last Tuesday’s working draft, no record of what changed or why, and no easy way for teammates to see or combine different people’s work.
+Version control (git + commits) keeps every intentional save point you choose, so you can always restore an older working version, see the differences, and collaborate safely.
+Does that help explain why we use commits instead of just relying on Ctrl+S?
+D the Student: How can I find the commited version on my local computer?
+Coach: You can see all the committed versions on your local computer with the command:
+git log
+That shows you a list of every commit you’ve made, with the message, date, and a unique ID (called a hash).
+To actually go back to one of those earlier versions, you would use a command like git checkout (or the newer git restore / git switch depending on what you want to do). The important part is that git log is the starting point for finding them.
+Would you like me to walk through a simple example of looking at the log and restoring an older version, or does that give you enough for now?
+D the Student: I think I understand now
+Coach: Excellent, D the Student. You’ve worked through the key ideas solidly: what version control is and why the history matters (especially going back to working versions and enabling teamwork), how git implements that with repository → status → stage/add → commit → push, and why GitHub serves as the off-device backup. Committing every working version is a habit that will serve you well.
+This has been a productive coaching session. Feel free to revisit any of these concepts anytime, and remember it’s always okay to say “I don’t know” or experiment and learn from mistakes.
