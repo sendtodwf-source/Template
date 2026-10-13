@@ -1,0 +1,47 @@
+Entry
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+[Attributes]
+
++_date : string // The date that the main program will add to the entry
+
++_ prompt : string // The prompt that the main program 
+
++_ response : string // The response to the prompt given through this class
+
+====================================================================================
+
+[Dehaviors]
+
++ Display() // A way to display what has already been queried and responded to while this class is running.
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+__________________________________________________________________________________________________________
+
+Journal
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+[Attributes]
+
++_Entries : List<Entry> // In this program 
+
++_ Prompts : List<string> /* A list of of Prompts that we have as options for prompts that the user can respond to. Although this could be changed to an Attribute that can hold the name of our prompts .TXT file so that the 'main' method doesn't need to process the file for a cleaner program syntax.*/
+
+====================================================================================
+
+[Dehaviors]
+
++ AddEntry() // a way to add more to our Journals list of string data before saving the program
+
++ DisplayEntries() // A way to display the past entries
+
++ SaveToFile('filename') // A way to save the updated information to the programs .TXT file
+
++ LoadFile ('filename') // So that the user can open the journal entries and read through the journal when queried 
+
++ AddPrompt () /* An added functionality. Incase the user is bored of responding to the same questions it can add its own prompt*/
+
+-----------------------------------------------------------------------------------------------------------------------------------
