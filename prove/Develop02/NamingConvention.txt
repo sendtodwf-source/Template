@@ -1,0 +1,7 @@
+Element Type	C# Convention	Example
+
+Classes: TitleCase (PascalCase)	Person, Job, Resume
+Methods: TitleCase (PascalCase)	ShowEasternName(), GetArea()
+Member Variables (Attributes):	_underscoreCamelCase	_givenName, _jobTitle
+Local Variables & Parameters:	camelCase	usersAge, daysInAMonth
+Constants:	ALL_CAPS_WITH_UNDERSCORES	NAME_INDEX, MATH_PI

@@ -1,12 +1,12 @@
 public class Entry
 {
-    string date;
-    string prompt;
-    string response;
+    public string _date = "";
+    public string _prompt;
+    public string _response;
     
     public void Display()
     {
-        Console.WriteLine($"date: {date}\nPrompt: {prompt}\n Response: {response}");
+        Console.WriteLine($"date: {_date}\nPrompt: {_prompt}\n Response: {_response}");
         
     }
 }
