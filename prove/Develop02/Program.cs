@@ -1,28 +1,18 @@
+//namespaces
 using System;
 using System.Collections.Generic;
 using System.IO;
-
-
+// Program class
 class Program
 {
-    static void Main(string[] args)
+    static void Main(string[] args) // main loop
     {
         Journal myJournal = new Journal();
-        //List<Entry>entries = new List<Entry>();
-        //Entry currentEntry = new Entry();
         DateTime today = DateTime.Now;
         string dateText = today.ToShortDateString();
         bool run = true;
-    //     currentEntry._date = dateText;
 
-    //     entries.Add(currentEntry);
-
-    //     Console.WriteLine(entries[0]._date);
-
-    //     myJournal.AddEntry(entries[0]);
-    //     myJournal.SaveToFile();
-    //     myJournal.DisplayEntries();
-while(run){
+while(run){ // Runs till user terminates program by selecting 6
             Console.WriteLine(@"
     Please Choose:
     1. Write
@@ -34,62 +24,38 @@ while(run){
             ");
 
             Console.Write("What would you like to do? ");
-            string response = Console.ReadLine();
+            string response = Console.ReadLine(); // get user input for selection
             int choice;
-            while (! int.TryParse(response, out choice))
+            while (! int.TryParse(response, out choice)) // input validation
             {
-                Console.Write("invalid try again: ");
-                response = Console.ReadLine();
+                Console.Write("invalid try again: "); //prompt user until valid
+                response = Console.ReadLine(); // take user input
             }
-            
+            // Check user response for validation
             if(choice == 1)
             {
                 myJournal.AddEntry();//this adds an "Entry" do our list of entries
             }
             if(choice == 2)
             {
-                myJournal.DisplayEntries();
+                myJournal.DisplayEntries();// this displays all loaded entries from file that user selects
             }
             if(choice == 3)
             {
-                myJournal.LoadFile(myJournal.GetFileName());
+                myJournal.LoadFile(myJournal.GetFileName());// this will load a Journal text file in a 3 spaced format. See Journal.cs for explanation
             }
             if(choice == 4)
             {
-                myJournal.SaveToFile(myJournal.GetFileName());
+                myJournal.SaveToFile(myJournal.GetFileName()); // Save user responses
             }
             if(choice == 5)
             {
-                myJournal.AddPrompt();
+                myJournal.AddPrompt(); // add a custom prompt to which the user sequentially responds
             }
             if(choice == 6)
             {
-                run = false;
+                run = false; // terminate program
             }
-
-            //another funcion named try parse which will return a true or false depending on if it succeeds in converting the data type.
-
-
-
-
-            /*string journalFile = "Journal.txt";
-            string promptsFile = @"C:\CSE-210\Template\prove\Develop02\Prompts.txt";
-            string firstName = "";
-            string lastName = "";
-            string[] lines = System.IO.File.ReadAllLines(promptsFile);
-            string firstPrompt = "";
-            string[] parts = [];
-
-                foreach (string line in lines)
-            {
-                parts = line.Split(",");
-                
-            }
-            firstName = parts[1];
-            Console.WriteLine(firstName);
-            */
-
-        
         }
     }
 }
