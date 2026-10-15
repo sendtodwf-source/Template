@@ -7,7 +7,7 @@ public class Journal
     public void AddEntry()
     {
         //Entry entrySend = new Entry();
-        string promptsFile = @"Prompts.txt";
+        string promptsFile = "prompts.txt";
         string[] lines = System.IO.File.ReadAllLines(promptsFile);
         Random randNum = new Random(); //create a random number class instance
         int topRange = lines.Count();
@@ -26,9 +26,6 @@ Add your own prompt.");
         }
 
         string userRes = Console.ReadLine(); //get the user response
-    
-        DateTime today = DateTime.Now; //get todays date
-        string dateText = today.ToShortDateString();
 
         AddNonRandEntry(currentPrompt, userRes);
     }
@@ -96,8 +93,7 @@ Add your own prompt.");
     public void AddPrompt()
     {
         string promptsFile = GetFileName();
-        
-        promptsFile = $@"{promptsFile}";
+    
         string[] lines = System.IO.File.ReadAllLines(promptsFile);
         string userIn = "";
 
