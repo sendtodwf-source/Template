@@ -7,7 +7,7 @@ public class Journal
     public void AddEntry()
     {
         //Entry entrySend = new Entry();
-        string promptsFile = @"C:\CSE-210\Template\prove\Develop02\Prompts.txt";
+        string promptsFile = @"Prompts.txt";
         string[] lines = System.IO.File.ReadAllLines(promptsFile);
         Random randNum = new Random(); //create a random number class instance
         int topRange = lines.Count();
@@ -47,7 +47,7 @@ Add your own prompt.");
         public string[] LoadFile(string fileName)
     {
         Entry entrySend = new Entry();
-        fileName = $@"C:\CSE-210\Template\prove\Develop02\{fileName}";
+        fileName = $@"{fileName}";
         string[] lines = System.IO.File.ReadAllLines(fileName);
         foreach (string line in lines)
         {
@@ -61,7 +61,7 @@ Add your own prompt.");
     }
     public void SaveToFile(string fileName)
     {
-        fileName = @$"C:\CSE-210\Template\prove\Develop02\{fileName}";
+        fileName = @$"{fileName}";
         using (StreamWriter outputFile = new StreamWriter(fileName))
         {
             foreach (Entry entry in _entries)
@@ -97,7 +97,7 @@ Add your own prompt.");
     {
         string promptsFile = GetFileName();
         
-        promptsFile = $@"C:\CSE-210\Template\prove\Develop02\{promptsFile}";
+        promptsFile = $@"{promptsFile}";
         string[] lines = System.IO.File.ReadAllLines(promptsFile);
         string userIn = "";
 
