@@ -1,0 +1,28 @@
+Fraction
+-----------------------
+(Attrubutes)
+_top : int
+_bottom : int
+
+-----------------------
+(Behaviors)
+
+//Constructors
+Fraction () //constructor null-setup
+Fraction (wholeNumber: int) //Whole Number setup
+Fraction (top : int, bottom : int)
+
+//setters
+SetTop(top : int)
+SetBottom(bottom : int)
+
+//getters
+GetTop()
+GetBottom()
+
+
+GetFractionString() : string
+GetDecimalValue() : double
+
+
+
