@@ -19,7 +19,7 @@ public class ListingActivity : Activity
     public void Start()
     {   
         Random rand = new Random(); //a random prompt number object
-        int randH = rand.Next(1, prompts.Count()-1); // random number hold: getting the length of the prompts list and finding a random number in range
+        int randH = rand.Next(1, prompts.Count()); // random number hold: getting the length of the prompts list and finding a random number in range
         chosen = prompts[randH-1];
         // \/ These are time managment variables \/
         DateTime startTime = DateTime.Now;
