@@ -40,6 +40,7 @@ public class ListingActivity : Activity
             Console.Write("\b \b");
         }
 
+        startTime = DateTime.Now;
         futureTime = startTime.AddSeconds(_duration);
         currentTime = DateTime.Now;
 

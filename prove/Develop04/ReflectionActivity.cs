@@ -34,8 +34,8 @@ public class ReflectionActivity : Activity
     public void Start()
     {   
         Random rand = new Random(); //a random prompt number object
-        int randH = rand.Next(1, prompts.Count()-1); // random number hold: getting the length of the prompts list and finding a random number in range
-        chosen = prompts[randH-1];
+        int randH = rand.Next(0, prompts.Count()); // random number hold: getting the length of the prompts list and finding a random number in range
+        chosen = prompts[randH];
         // \/ These are time managment variables \/
         DateTime startTime = DateTime.Now;
         DateTime futureTime = startTime.AddSeconds(_duration);
@@ -48,7 +48,7 @@ public class ReflectionActivity : Activity
         Console.WriteLine("When you have something in mind, press enter to continue");
         Console.ReadLine(); // Wait for user to press enter to continue
         Console.Clear();
-        Console.Write("Now ponder on each of the following questions as they related to this experience.\nYou may begin in:");
+        Console.Write("Now ponder on each of the following questions as they related to this experience.\nYou may begin in: ");
         
         for(int i = 5; i > 0; i--)
         {
@@ -59,18 +59,20 @@ public class ReflectionActivity : Activity
         Console.Clear();
 
         Random randF = new Random(); //a random prompt number object
-        int randFH = rand.Next(1, chosen.Count()-1);
+        int randFH = rand.Next(0, chosen.Count());
         bool flag = false;
         int cnt = 0;
 
+        foUQ = followUp[randFH];
+
+        startTime = DateTime.Now;
         futureTime = startTime.AddSeconds(_duration);
         currentTime = DateTime.Now;
-
-        randFH = rand.Next(1, chosenFs.Count()-1);//get a random follow-up question
-        foUQ = followUp[randFH];
+        
         while (currentTime < futureTime) // while loop that keeps asking the user to respond to follow-up questions
         {    
             run = true;
+            randFH = rand.Next(0, chosenFs.Count());
             while (run) // This is to make sure we don't get the same follow up question twice
             {
                 flag = chosenFs[randFH];
@@ -83,7 +85,6 @@ public class ReflectionActivity : Activity
                 else
                 {
                     run = true;
-                    randFH = rand.Next(0, chosenFs.Count()-1);
                 }
                 foreach(bool check in chosenFs)
                 {

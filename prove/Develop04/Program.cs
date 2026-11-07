@@ -43,7 +43,6 @@ Please Type a Selection from the Menu: ");
                     break;
                 case "3":
                     Console.WriteLine("act3");
-                    Console.WriteLine("act1");
                     Console.Write("Get ready...");
                     act3.ShowSpinner(2);
                     act3.Start();
