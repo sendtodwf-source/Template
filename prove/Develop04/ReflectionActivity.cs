@@ -34,7 +34,7 @@ public class ReflectionActivity : Activity
     public void Start()
     {   
         Random rand = new Random(); //a random prompt number object
-        int randH = rand.Next(1, prompts.Count()); // random number hold: getting the length of the prompts list and finding a random number in range
+        int randH = rand.Next(0, prompts.Count()); // random number hold: getting the length of the prompts list and finding a random number in range
         chosen = prompts[randH];
         // \/ These are time managment variables \/
         DateTime startTime = DateTime.Now;
@@ -59,7 +59,7 @@ public class ReflectionActivity : Activity
         Console.Clear();
 
         Random randF = new Random(); //a random prompt number object
-        int randFH = rand.Next(1, followUp.Count());
+        int randFH = rand.Next(0, followUp.Count());
         bool flag = false;
         int cnt = 0;
 
@@ -72,7 +72,7 @@ public class ReflectionActivity : Activity
         while (currentTime < futureTime) // while loop that keeps asking the user to respond to follow-up questions
         {    
             run = true;
-            randFH = rand.Next(1, chosenFs.Count());
+            randFH = rand.Next(0, chosenFs.Count());
             while (run) // This is to make sure we don't get the same follow up question twice
             {
                 flag = chosenFs[randFH];
