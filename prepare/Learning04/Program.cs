@@ -10,6 +10,5 @@ class Program
         Console.WriteLine(a.GetSummary());
         Console.WriteLine(m.GetHomeworkList());
         Console.WriteLine(w.GetWritingInfromation());
-
     }
 }
